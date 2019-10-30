@@ -7,13 +7,15 @@ const Forest = () => {
   const [numTrees, setNumTrees] = useState(5);
   const [treeType, setTreeType] = useState("🌳");
 
+  const setNumTreesBizzarely = (num) => setNumTrees(num * 5)
+
   const { animal, numAnimals, setNumAnimals } = useAnimalContext();
 
   return (
     <article style={{ fontSize: "4em" }}>
       <section>
-        {_.times(numTrees, () => treeType)}
-        {_.times(numAnimals, () => animal)}
+        <span aria-label="trees">{_.times(numTrees, () => treeType)}</span>
+        <span aria-label="animals">{_.times(numAnimals, () => animal)}</span>
       </section>
       <section>
         <button
@@ -23,7 +25,7 @@ const Forest = () => {
         </button>
         <IncrementDecrementButtons
           numItems={numTrees}
-          setNumItems={setNumTrees}
+          setNumItems={setNumTreesBizzarely}
         >
           Trees
         </IncrementDecrementButtons>
