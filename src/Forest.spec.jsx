@@ -8,7 +8,7 @@ import _ from "lodash";
 Enzyme.configure({ adapter: new ReactAdapter() });
 
 jest.mock("./useAnimalContext")
-jest.mock("lodash")
+// jest.mock("lodash")
 
 describe("Forest", () => {
   beforeEach( () => {
@@ -31,7 +31,7 @@ describe("Forest", () => {
       expect(forestString.length).toEqual("🤔".length * 100)
     })
   })
-  
+
   it("Shows the right type of trees", () => {
     const wrapper = shallow(<Forest />);
     const changeTreeButton = wrapper.find("[children='Change tree']");
