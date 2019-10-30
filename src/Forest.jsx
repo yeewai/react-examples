@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import _ from "lodash";
-import IncrementDecrementButtons from "./IncrementDecrementButtons";
+import IncrementDecrementButtons from "./incrementDecrementButtons";
 import { useAnimalContext } from "./useAnimalContext";
 
 const Forest = () => {
@@ -37,7 +37,7 @@ const Forest = () => {
       </p>
       <section>
         <button
-          onClick={() => setTreeType(_.shuffle(["🌲", "🌴", "🌳", "🎄"])[0])}
+          onClick={() => setTreeType(_.shuffle(["🌲", "🌳", "🎄", "🌴"])[0])}
         >
           Change tree
         </button>
@@ -45,8 +45,7 @@ const Forest = () => {
           numItems={numTrees}
           setNumItems={setNumTrees}
         >
-          {" "}
-          Trees{" "}
+          Trees
         </IncrementDecrementButtons>
         <IncrementDecrementButtons
           numItems={numAnimals}
